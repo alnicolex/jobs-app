@@ -1,0 +1,30 @@
+<button type="button" class="btn btn-danger" (click)="removeAll()">
+  Remove all
+</button>
+
+<h1>Jobs lists </h1>
+  <div class="list row">
+    <div class="col-md-6" >
+      <ul class="list-group list-group-item-light"
+        *ngFor="let item of jobs$ | async; let i = index"
+        (click) = "jobConfig(item, i)"
+      >
+        <li class="list-group-item" style="margin-top: 5px;">
+          <a href="#" (click)="detail(item); $event.preventDefault()"> <h4> {{item.job_name}}</h4> </a>
+          <h5> Location: {{item.location}} </h5>
+          <h6> Salary: {{item.salary}} </h6>
+          <h6> Post: {{item.created_date | date:'yyyy-MM-dd'}} </h6>
+
+
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+
+
+

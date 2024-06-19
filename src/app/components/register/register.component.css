@@ -1,0 +1,41 @@
+form {
+  width: 80vw;
+  max-width: 700px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+div,
+input,
+textarea,
+select {
+  margin: 10px 0 0 0;
+  width: 100%;
+  min-height: 2em;
+}
+
+button {
+  display: block;
+  width: 40%;
+  margin: 1em auto;
+  height: 2.3em;
+  font-size: 1.1rem;
+  min-width: 200px;
+}
+
+.button-row {
+  display: flex;
+  gap: 5px;
+  margin: 2em auto;
+}
+
+span {
+  font-size: 13px;
+  color: red;
+}

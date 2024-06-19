@@ -1,0 +1,82 @@
+<h1>New Job Creation Form</h1>
+<div class="row">
+  <div class="col-md-6">
+    <form class="row g-3 needs-validation" #f="ngForm" (ngSubmit)="saveJob()">
+      <div *ngIf="!dataOk">
+        <p>Please fill out this form </p>
+        <div class="form-group">
+          <label for="jobname" class="form-label">Title:</label>
+            <input type="text" class="form-control" name="jobname" id="jobname"
+            ngModel #jobname="ngModel"
+            [(ngModel)]="job.job_name" required>
+            <span *ngIf="!jobname.valid && jobname.touched" class="help-block">
+              * required information
+            </span>
+        </div>
+
+        <div class="form-group">
+          <label for="location" class="form-label">Location:</label>
+          <select type="text" class="form-control" name="location" id="jobname"
+            ngModel #location="ngModel"
+            [(ngModel)]="job.location" required>
+            <option value="toronto">Toronto </option>
+            <option value="london">London </option>
+            <option value="ottawa">Ottawa </option>
+            <option value="niagara">Niagara Falls </option>
+          </select>
+          <span *ngIf="!location.valid && location.touched" class="help-block">
+            * required information
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="salary" class="form-label">Salary:</label>
+          <input type="number" class="form-control" name="salary" id="salary"
+            min="0.00" ngModel #salary="ngModel"
+            [(ngModel)]="job.salary" required/>
+            <span *ngIf="!salary.valid && salary.touched" class="help-block">
+              * required information
+            </span>
+        </div>
+
+        <div class="form-group">
+          <label for="typej" class="form-label">Type:</label>
+          <select name="typej" class="form-control" id="typej"
+            ngModel #typej="ngModel"
+            [(ngModel)]="job.employment_type" required>
+            <option value="remote">Remote</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="insite">In site</option>
+          </select>
+          <span *ngIf="!typej.valid && typej.touched" class="help-block">
+            * required information
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="descriptionj" class="form-label">Description:</label>
+          <textarea name="descriptionj" class="form-control" id="descriptionj"
+            ngModel #descriptionj="ngModel"
+            [(ngModel)]="job.job_description" required>
+            </textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="qualifications" class="form-label">Qualifications:</label>
+          <textarea name="qualifications" class="form-control" id="qualifications" required
+            [(ngModel)]="job.qualifications" >
+          </textarea>
+        </div>
+        <div class="button-row">
+          <button type="button" class="btn btn-secondary" (click)="showConfirm()">Cancel</button>
+          <button type="submit" class="btn btn-success" [disabled]="f.invalid">Submit</button>
+        </div>
+
+      </div>
+      <div *ngIf="dataOk">
+        <p>Great!! Job created .. </p>
+        <button class="btn btn-primary" type="submit" (click)="newJob()">Create new</button>
+      </div>
+    </form>
+  </div>
+</div>

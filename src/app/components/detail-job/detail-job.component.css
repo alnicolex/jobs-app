@@ -1,0 +1,22 @@
+button {
+  display: block;
+  width: 40%;
+  margin: 1em auto;
+  height: 2.3em;
+  font-size: 1.1rem;
+  min-width: 200px;
+}
+
+.button-row {
+  display: flex;
+  gap: 5px;
+  margin: 2em auto;
+}
+
+div {
+  width: 80vw;
+  max-width: 1000px;
+  min-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+}

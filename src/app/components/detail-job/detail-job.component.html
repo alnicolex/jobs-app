@@ -1,0 +1,37 @@
+<div>
+  <h1>Job Detail</h1>
+</div>
+
+<div class="card border-secondary mb-12" >
+  <div class="card-header">
+    <h4>{{ _job?.job_name }}</h4>
+    <h6>{{ _job?.created_date | date:'yyyy-MM-dd' }}</h6>
+  </div>
+
+  <div class="card-body text-secondary">
+    <h4 class="card-title"> {{ _job?.location}}</h4>
+    <h5 class="card-title">$ {{ _job?.salary}} </h5>
+    <h6 class="card-title">company: {{ _job?.company_id}}</h6>
+  </div>
+
+  <div  class="card-body text-secondary">
+    <h6>type: {{ _job?.employment_type}} </h6>
+    <h6>description: {{ _job?.job_description }}</h6>
+    <h6>qualifications: {{ _job?.qualifications}}</h6>
+  </div>
+
+  <div class="button-row">
+    <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+    <button type="button" class="btn btn-primary" >Apply now</button>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
